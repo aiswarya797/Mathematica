@@ -1,0 +1,195 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6386,        187]
+NotebookOptionsPosition[      5583,        159]
+NotebookOutlinePosition[      5959,        175]
+CellTagsIndexPosition[      5916,        172]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"t_", ",", "y_"}], "]"}], " ", "=", " ", 
+  RowBox[{
+  "Input", "[", "\"\<Enter the required function\>\"", 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"t0", " ", "=", " ", 
+  RowBox[{
+  "Input", " ", "[", "\"\<Enter the initial value of t = t0\>\"", 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"y0", " ", "=", " ", 
+   RowBox[{"Input", "[", "\"\<Enter the initial value of y = y0\>\"", "]"}]}],
+   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tval", " ", "=", " ", 
+   RowBox[{"Input", "[", "\"\<Enter the end value for t\>\"", "]"}]}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"Preferable", " ", "tval"}], " ", "=", " ", "1"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"epsilon", " ", "=", " ", ".001"}], "  ", 
+  RowBox[{"(*", 
+   RowBox[{"You", " ", "can", " ", "set", " ", "any", " ", "epsilon"}], 
+   "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"error", " ", "=", " ", "1"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"yprev", "[", "t_", "]"}], " ", "=", " ", "y0"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"While", " ", "[", " ", 
+   RowBox[{
+    RowBox[{"error", " ", ">", " ", "epsilon"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"ynew", "[", "t_", "]"}], " ", "=", " ", 
+      RowBox[{"y0", " ", "+", " ", 
+       RowBox[{
+        SubsuperscriptBox["\[Integral]", "t0", "t"], 
+        RowBox[{
+         RowBox[{"f", "[", 
+          RowBox[{"x", ",", 
+           RowBox[{"yprev", "[", "x", "]"}]}], "]"}], 
+         RowBox[{"\[DifferentialD]", "x"}]}]}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"error", " ", "=", " ", 
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"ynew", "[", "tval", "]"}], " ", "-", " ", 
+        RowBox[{"yprev", "[", "tval", "]"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"yprev", "[", "t_", "]"}], " ", "=", " ", 
+      RowBox[{"ynew", "[", "t", "]"}]}], ";"}]}], "\[IndentingNewLine]", 
+   "]"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Our Solution is= y(t)=\>\"", " ", "+", " ", 
+    RowBox[{"ynew", "[", "t", "]"}]}], "]"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.7125316924618483`*^9, 3.7125318759197483`*^9}, 
+   3.7125319599446416`*^9, {3.712532034392372*^9, 3.71253225027297*^9}, {
+   3.712532416153714*^9, 3.7125324172014575`*^9}, {3.7125324623024764`*^9, 
+   3.7125324694035435`*^9}, {3.712532648123721*^9, 3.7125326488102093`*^9}, {
+   3.7125327076345625`*^9, 3.712532719519997*^9}, {3.7125327505870495`*^9, 
+   3.712532751442683*^9}, {3.7125328041280537`*^9, 3.7125328216014576`*^9}, {
+   3.7125387422206063`*^9, 3.712538756939533*^9}, 3.7125389826529083`*^9, {
+   3.712539359044821*^9, 3.712539365822629*^9}, {3.712539479210289*^9, 
+   3.7125394852265296`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7125394377508774`*^9, 3.7125394767375355`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.712539439607176*^9, 3.712539439626188*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7125394416636324`*^9, 3.7125394491469345`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", "Example", " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.712539445766564*^9, 3.712539445780574*^9}, {
+  3.712539489055272*^9, 3.7125394969416857`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox["t", "2"], "+", 
+  SuperscriptBox["y", "2"]}]], "Input",
+ CellChangeTimes->{{3.712532737144515*^9, 3.712532745210233*^9}, {
+  3.7125387097827196`*^9, 3.712538723548564*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{" ", "0"}]], "Input",
+ CellChangeTimes->{{3.712538712110851*^9, 3.712538721032957*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.712532320251614*^9, 3.712532428319323*^9, 
+  3.71253250815405*^9}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.712532320251614*^9, 3.712532428319323*^9, 
+  3.7125325100363855`*^9}],
+
+Cell[BoxData["0.001`"], "Output",
+ CellChangeTimes->{3.712532320251614*^9, 3.712532428319323*^9, 
+  3.7125325100423665`*^9}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.712532320251614*^9, 3.712532428319323*^9, 
+  3.712532510047367*^9}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.712532320251614*^9, 3.712532428319323*^9, 
+  3.7125325100523767`*^9}],
+
+Cell[BoxData[
+ RowBox[{"\<\"Our Solution is= y(t)\"\>", "=", 
+  RowBox[{
+   FractionBox[
+    SuperscriptBox["t", "3"], "3"], "+", 
+   FractionBox[
+    SuperscriptBox["t", "7"], "63"], "+", 
+   FractionBox[
+    RowBox[{"2", " ", 
+     SuperscriptBox["t", "11"]}], "2079"], "+", 
+   FractionBox[
+    SuperscriptBox["t", "15"], "59535"], " "}]}]], "Print",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.7125325101314535`*^9, {3.712532722155895*^9, 3.712532748241392*^9}, {
+   3.712538976740715*^9, 3.712538978693101*^9}}]
+}, Open  ]]
+},
+WindowSize->{779, 562},
+WindowMargins->{{Automatic, 6}, {Automatic, 45}},
+Magnification:>1.1 Inherited,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 3023, 71, 498, "Input"],
+Cell[3584, 93, 96, 1, 33, InheritFromParent],
+Cell[3683, 96, 92, 1, 33, InheritFromParent],
+Cell[3778, 99, 96, 1, 33, InheritFromParent],
+Cell[3877, 102, 179, 3, 33, InheritFromParent],
+Cell[4059, 107, 214, 5, 33, "Input"],
+Cell[CellGroupData[{
+Cell[4298, 116, 110, 2, 33, "Input"],
+Cell[4411, 120, 116, 2, 33, "Output"],
+Cell[4530, 124, 119, 2, 33, "Output"],
+Cell[4652, 128, 124, 2, 33, "Output"],
+Cell[4779, 132, 117, 2, 33, "Output"],
+Cell[4899, 136, 119, 2, 33, "Output"],
+Cell[5021, 140, 546, 16, 40, "Print"]
+}, Open  ]]
+}
+]
+*)
+
